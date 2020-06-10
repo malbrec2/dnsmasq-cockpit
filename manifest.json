@@ -1,0 +1,11 @@
+{
+    "version": 0.1,
+
+    "menu": {
+        "dnsmasq-dhcp": {
+            "label": "DHCP",
+            "path": "dnsmasq-dhcp.html",
+	    "order": 45
+	}
+    }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dnsmasq</title>
+    <meta charset="utf-8">
+    <link href="../base1/cockpit.css" type="text/css" rel="stylesheet">
+    <link href="../base1/patternfly.css" type="text/css" rel="stylesheet">
+    <link href="dnsmasq.css" type="text/css" rel="stylesheet">
+    <script src="../base1/cockpit.js"></script>
+    <script src="../base1/jquery.js"></script>
+
+
+</head>
+<body>
+    <div class="col-sm-4 page-ct">
+	<div class="panel panel-default" id="dnsmasq-stats">
+		<div class="panel-heading">
+			<h2 class="panel-title">DHCP Settings</h2>
+		</div>
+		<table class="table table-sm">
+			<tr><td>Subnet</td><td id="dhcp-subnet">192.168.42.0/24</td></tr>
+			<tr><td>DHCP Range Start</td><td id="dhcp-range-start"></td></tr>
+			<tr><td>DHCP Range End</td><td id="dhcp-range-end"></td></tr>
+			<tr><td>DHCP Lease Time</td><td id="dhcp-lease-time"></td></tr>
+			<tr><td>Max DHCP Leases</td><td id="dhcp-lease-max"></td></tr>
+			<tr><td>DNS Servers</td><td id="dns-servers"></td></tr>
+		</table>
+	</div>
+    </div>
+    <div class="col-sm-8 page-ct">
+	<div class="panel panel-default" id="dnsmasq-resv">
+	      <div class="panel-heading">
+        	<h2 class="panel-title">DHCP Reservations</h2>
+	      </div>
+	      <table class="table table-hover table-sm">
+	        <thead>
+        	  <tr>
+	            <th>Hostname</th>
+        	    <th>IP Address</th>
+	            <th>MAC Address</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+		</tbody>
+		<tfoot>
+			<tr><td colspan=4><span>Add Reservation</span></td></tr>
+			<tr><td><input type="text" class="resv_hostname"></td><td><input type="text" class="resv_ipaddr"></td><td><input type="text" class="resv_mac"></td><td><button type="button" class="btn btn-lg btn-primary save_resv">Save</i></button></td></tr>
+		</tfoot>
+	      </table>
+	    </div>
+    </div>
+
+
+	
+	<div class="col-sm-12">
+	<div class="panel panel-default" id="dnsmasq-leases">
+	      <div class="panel-heading">
+        	<h2 class="panel-title">DHCP Leases</h2>
+	        <div class="panel-actions">
+	          <button id="dnsmasq-refresh-list" class="btn btn-default dnsmasq-privileged" data-original-title="" title="" data-stable="yes">Refresh Leases</button>
+        	</div>
+	      </div>
+	      <table class="table table-hover table-sm">
+	        <thead>
+        	  <tr>
+	            <th>Hostname</th>
+        	    <th>IP Address</th>
+	            <th>MAC Address</th>
+        	    <th class="networking-speed">Lease Expires</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+		</tbody>
+	      </table>
+	    </div>
+    </div>
+
+    <script src="dnsmasq-dhcp.js"></script>
+</body>
+</html>
+
